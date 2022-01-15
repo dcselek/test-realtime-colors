@@ -4,6 +4,7 @@ function Palette() {
     return (
         <div>
             <input type="color" />
+            <button>Click!</button>
         </div>
     )
 }
