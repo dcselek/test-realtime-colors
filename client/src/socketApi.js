@@ -9,7 +9,18 @@ export const init = () => {
         transports: ["websocket"]
     });
 
-    socket.on("connect",() => {
+    socket.on("connect", () => {
         console.log("Sunucuya bağlandık knks :))");
+    })
+}
+
+export const send = (color) => {
+    socket.emit("newColor", color)
+}
+
+export const subscribe = (cb) => {
+    socket.on("receive", (color) => {
+        console.log(color)
+        cb(color);
     })
 }
